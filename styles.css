@@ -1,0 +1,149 @@
+/* styles.css */
+
+/* Fundo personalizado com imagem de Satoru Gojo e Yuji Itadori */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.ign.com%2Fjujutsu-kaisen%2F119380%2Fnews%2Fcapitulo-249-de-jujutsu-kaisen-aponta-novo-protagonista-e-nao-tem-como-discutir-com-gege-akutami&psig=AOvVaw26jWL8dF7TWxKLEsde9q6h&ust=1729016010417000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDD6te8jokDFQAAAAAdAAAAABAE'); /* Link da imagem ou caminho local */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(8px) brightness(0.7); /* Desfoque e escurecimento para dar foco ao conteúdo */
+}
+
+/* Corpo centralizado */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container com efeito de vidro fosco */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Fundo translúcido */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    backdrop-filter: blur(10px);
+}
+
+/* Título com bounce */
+.title {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+/* Texto com fade-in */
+.message {
+    font-size: 1.2rem;
+    color: #2ecc71;
+    margin-bottom: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Envelope com animação ao passar o mouse */
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+    background: #f39c12;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    background: #f1c40f;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: #e67e22;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Sombra para o envelope */
+.envelope-shadow {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Mensagem oculta com transição suave */
+.hidden-message {
+    display: none;
+    font-size: 1.5rem;
+    color: #8e44ad;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    animation: fadeInMessage 2s ease-in-out;
+    white-space: pre-wrap;
+}
+
+/* Animação de fade suave na mensagem */
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotateX(90deg); /* Girar de cima para baixo */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+    }
+}
+
+/* Animação de bounce no título */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animação de fade in no texto */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
